@@ -1,19 +1,24 @@
-# OwlChat
+# 　OwlChat
+　
 
-Кросплатформний pet-project чат-додаток (Android, iOS, Windows) з фокусом на безпеку, масштабованість і low-latency real-time.
 
+╔═════════════════════════════════════════════════╗                            
+║　　　︾▽︾⩘　　　Messenger pet-project — ***Owl Chat***　　　︾▽︾⩘　　　║  
+╚══╔═══════════════════════════════════════════╗══╝  
+　　║　⪧ 　　　Cross–platform App for *Android, iOS, Windows*　　　⪦ 　║              
+　　╚═══════════════════════════════════════════╝  
+  　
 ## Поточний стан
 
 У репозиторії стартово реалізовано:
-- Архітектурна стратегія: `TECH_STRATEGY_UA.md`.
-- Базовий backend (Go) з API для:
+- Базовий backend:
   - health-check,
-  - dev login (JWT),
-  - створення чатів,
-  - відправки/читання текстових повідомлень.
+  - dev login,
+  - create chats,
+  - send/read text message.
 - Локальна інфраструктура для dev: PostgreSQL + Redis (`docker-compose`).
 
-> Важливо: поточна реалізація backend використовує in-memory store (без персистентності), щоб швидко стартувати MVP-розробку.
+> Важливо: backend використовує "in-memory stor", щоб швидко стартувати MVP-розробку.
 
 ---
 
@@ -22,7 +27,7 @@
 ```text
 .
 ├── README.md
-├── TECH_STRATEGY_UA.md
+├── TECH_STRATEGY.md
 ├── apps
 │   └── client_flutter
 ├── deploy
@@ -52,21 +57,16 @@
 
 ### 1) Backend
 - Go `1.22+`
-- Docker + Docker Compose (для PostgreSQL/Redis)
+- Docker + Docker Compose
 
-### 2) Mobile/Desktop (наступний етап)
-- Flutter stable SDK
-- Android Studio / Xcode / Visual Studio (Windows desktop workload)
+### 2) Mobile/Desktop
+- Flutter SDK
+- Android Studio (android SDK)
+- Visual Studio (desktop development tools)
 
 ---
 
 ## Встановлення і запуск
-
-## 0. Клонування
-```bash
-git clone <your-repo-url>
-cd OwlChat
-```
 
 ## 1. Підняти локальну інфраструктуру
 ```bash
@@ -107,7 +107,7 @@ make run
 GET /healthz
 ```
 
-### Dev login (отримати access token)
+### Dev login
 ```http
 POST /api/v1/auth/dev-login
 Content-Type: application/json
@@ -163,22 +163,14 @@ make run    # run server
 
 ---
 
-## Що робити далі (next milestones)
+## Подальші плани
 
-1. Замінити in-memory storage на PostgreSQL + migrations.
-2. Додати Redis для presence/typing/rate limiting.
-3. Додати WebSocket gateway для реального real-time fan-out.
-4. Реалізувати auth middleware (Bearer JWT) та refresh token ротацію.
-5. Створити Flutter-клієнт (auth/chats/messages) з clean architecture.
-6. Додати e2e encryption для private chats (Signal-підхід) поетапно.
+- [ ] Замінити in-memory storage на PostgreSQL + migrations.
+- [ ] Додати Redis для presence/typing/rate limiting.
+- [ ] Додати WebSocket gateway для реального real-time fan-out.
+- [ ] Реалізувати auth middleware (Bearer JWT) та refresh token ротацію.
+- [ ] Створити Flutter-клієнт (auth/chats/messages) з clean architecture.
+- [ ] Додати e2e encryption для private chats (Signal-підхід) поетапно.
 
 ---
 
-## Нотатки по безпеці
-
-- Поточний `dev-login` endpoint призначений лише для локальної розробки.
-- Для production потрібні:
-  - повноцінна реєстрація/автентифікація,
-  - secure secret management,
-  - TLS termination,
-  - rate limiting і audit logging.
