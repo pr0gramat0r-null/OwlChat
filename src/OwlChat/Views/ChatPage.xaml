@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OwlChat.Views.ChatPage"
+             Title="Chat">
+    <Grid Padding="16" RowDefinitions="*,Auto" RowSpacing="12">
+        <CollectionView ItemsSource="{Binding Messages}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="0,8">
+                        <Label Text="{Binding Sender}" FontAttributes="Bold" />
+                        <Label Text="{Binding Text}" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+            <Entry Text="{Binding MessageText}" Placeholder="Type a message..." />
+            <Button Grid.Column="1" Text="Send" Command="{Binding SendCommand}" />
+        </Grid>
+    </Grid>
+</ContentPage>
