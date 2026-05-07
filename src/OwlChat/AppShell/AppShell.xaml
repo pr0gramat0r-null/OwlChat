@@ -3,8 +3,16 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:OwlChat.Views"
        x:Class="OwlChat.AppShell.AppShell">
+
     <TabBar>
-        <ShellContent Title="Login" ContentTemplate="{DataTemplate views:LoginPage}" />
-        <ShellContent Title="Chat" ContentTemplate="{DataTemplate views:ChatPage}" />
+        <ShellContent Title="Login" 
+                      Icon="tab_login.png"
+                      ContentTemplate="{DataTemplate views:LoginPage}" 
+                      Route="login" />
+        <ShellContent Title="Chat" 
+                      Icon="tab_chat.png"
+                      ContentTemplate="{DataTemplate views:ChatPage}" 
+                      Route="chat" />
     </TabBar>
+
 </Shell>
