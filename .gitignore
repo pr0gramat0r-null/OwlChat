@@ -1,0 +1,130 @@
+﻿################################################################################
+# Visual Studio / MAUI / .NET generated files and local caches
+################################################################################
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Bb]in/
+[Oo]bj/
+**/[Bb]in/
+**/[Oo]bj/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+
+# Visual Studio cache and workspace files
+.vs/
+**/.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vspscc
+*.vssscc
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Rider
+.idea/
+*.sln.iml
+out/
+
+# Local project settings / environment files
+appsettings.local.json
+*.local.*
+launchSettings.json
+*.env
+.env
+.env.local
+
+# Test results
+TestResults/
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.coverage
+
+# NuGet / package caches
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+**/packages/
+packages.lock.json
+
+# MAUI / mobile artifacts
+.maui/
+*.apk
+*.aab
+*.ipa
+*.ipsw
+
+# Generated files
+*.g.cs
+*.xaml.g.cs
+*.designer.cs
+*.AssemblyInfo.cs
+*.GlobalUsings.g.cs
+*.GeneratedMSBuildEditorConfig.editorconfig
+
+# Database and cache files
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.cache
+*.vsidx
+*.mpack
+
+# OS files
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*~
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Deployment / publish folders
+artifacts/
+publish/
+PublishProfiles/
+deploy/
+
+# Build / runtime files
+VisualStudioVersion.props
+
+# Project workspace or solution user options
+*.csproj.user
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Flutter and Dart (workspace may include Flutter app)
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
